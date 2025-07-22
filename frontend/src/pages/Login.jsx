@@ -98,11 +98,11 @@ const Login = () => {
 
         {/* Right Side - Image */}
         <div className="hidden md:block bg-blue-100 p-6 flex items-center justify-center">
-          <img
+          {/* <img
             src="https://cdn.dribbble.com/users/1580985/screenshots/14976150/media/0f67440008996d9e5b3d17b1ea3b88ea.png?compress=1&resize=800x600"
             alt="Login illustration"
             className="w-full h-auto object-contain"
-          />
+          /> */}
         </div>
       </div>
     </div>

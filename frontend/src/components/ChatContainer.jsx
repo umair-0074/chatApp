@@ -58,15 +58,14 @@ const ChatContainer = () => {
           >
             {/* Avatar */}
             <div className="chat-image avatar">
-              <div className="size-10 rounded-full border border-base-300">
-                <img
-                  src={
-                    message.senderId === authUser._id
-                      ? authUser.profilePic || "/avatar.png"
-                      : selectedUser.profilePic || "/avatar.png"
-                  }
-                  alt="profile pic"
-                />
+              <div className="size-10 rounded-full border border-base-300 bg-base-300 text-sm font-medium flex items-center justify-center">
+                {(message.senderId === authUser._id
+                  ? authUser.username
+                  : selectedUser.username
+                )
+
+                  ?.charAt(0)
+                  .toUpperCase()}
               </div>
             </div>
 

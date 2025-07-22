@@ -13,11 +13,20 @@ const ChatHeader = () => {
         <div className="flex items-center gap-2">
           {/* Avatar */}
           <div className="relative">
-            <img
-              src={selectedUser.profilePic || "/avatar.png"}
-              alt={selectedUser.fullname}
-              className="w-8 h-8 object-cover rounded-full"
-            />
+            {selectedUser.profilePic ? (
+              <img
+                src={selectedUser.profilePic}
+                alt={selectedUser.fullname}
+                className="w-8 h-8 object-cover rounded-full"
+              />
+            ) : (
+              <div className="w-8 h-8 rounded-full bg-base-300 text-sm font-medium flex items-center justify-center text-gray-800">
+                {(selectedUser.username || selectedUser.fullname || "U")
+                  .charAt(0)
+                  .toUpperCase()}
+              </div>
+            )}
+
             {onlineUsers.includes(selectedUser._id) && (
               <span className="absolute bottom-0 right-0 w-2 h-2 bg-green-500 rounded-full ring-2 ring-white" />
             )}

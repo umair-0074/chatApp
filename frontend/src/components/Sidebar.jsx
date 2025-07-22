@@ -64,17 +64,30 @@ const Sidebar = () => {
     }
   `}
           >
-            {/* Avatar: 1/4 of space */}
             <div className="flex-[1] relative">
-              <img
-                src={user.profilePic || "/avatar.png"}
-                alt={user.name}
-                className="w-full aspect-square object-cover rounded-full"
-              />
+              {user.profilePic ? (
+                <img
+                  src={user.profilePic}
+                  alt={user.fullname}
+                  className="w-full aspect-square object-cover rounded-full"
+                />
+              ) : (
+                <div className="w-full aspect-square rounded-full bg-gray-300 flex items-center justify-center">
+                  <span className="text-white font-semibold text-sm">
+                    {user.fullname
+                      ?.split(" ")
+                      .map((n) => n[0])
+                      .join("")
+                      .substring(0, 2)
+                      .toUpperCase()}
+                  </span>
+                </div>
+              )}
+
               {onlineUsers.includes(user._id) && (
                 <span
                   className="absolute bottom-0 right-0 size-3 bg-green-500 
-      rounded-full ring-2 ring-white"
+        rounded-full ring-2 ring-white"
                 />
               )}
             </div>

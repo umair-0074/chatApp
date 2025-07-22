@@ -37,11 +37,11 @@ const Signup = () => {
       <div className="bg-white shadow-2xl rounded-2xl overflow-hidden w-full max-w-5xl grid grid-cols-1 md:grid-cols-2">
         {/* Left Side - Image */}
         <div className="hidden md:block bg-blue-100 p-6 flex items-center justify-center">
-          <img
+          {/* <img
             src="https://cdn.dribbble.com/users/14268/screenshots/16015474/media/118ff877fe5db8d66bc4a0b314c0cc76.png?compress=1&resize=800x600"
             alt="Sign up illustration"
             className="w-full h-auto object-contain"
-          />
+          /> */}
         </div>
 
         {/* Right Side - Form */}
